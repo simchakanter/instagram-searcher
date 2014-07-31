@@ -17,6 +17,9 @@
       </div>
     </form>
     <div class="search-results">
+      <div class="progress-message" ng-if="searchInProgress">
+        Checking instagram...
+      </div>
       <div class="result-message">
         {{resultMessage}}
       </div>

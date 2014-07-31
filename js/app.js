@@ -6,6 +6,7 @@ instaSearch.controller("InstagramSearchCtrl", function($scope, $http) {
       $scope.formError = true;
       return false;
     }
+    $scope.searchInProgress = true;
     $scope.keyword = keyword;
     $scope.formError = false;
     var url = "https://api.instagram.com/v1/tags/" + keyword + "/media/recent";
@@ -23,6 +24,7 @@ instaSearch.controller("InstagramSearchCtrl", function($scope, $http) {
       $scope.results = result.data;
       $scope.resultMessage = "We found " + $scope.results.length + " results for " + $scope.keyword;
       $scope.keyword = "";
+      $scope.searchInProgress = false;
     })
     .error(function() {
       alert('Error!');
