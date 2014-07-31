@@ -23,9 +23,10 @@
       <div class="result-message">
         {{resultMessage}}
       </div>
+      <div class="test-animate my-show-hide-animation" ng-show="showPics">
+      </div>
       <div class="results-container">
-        <!-- photo results go here -->
-        <div class="photo-result" ng-repeat="result in results">
+        <div class="photo-result my-show-hide-animation" ng-repeat="result in results" ng-show="showPics">
           <a href="{{result.link}}">
             <img ng-src="{{result.images.low_resolution.url}}" alt="result picture">
           </a>

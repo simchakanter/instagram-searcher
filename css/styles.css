@@ -34,6 +34,7 @@
 
 .results-container {
   padding-top: 30px;
+  position: relative;
 }
 
 .search-results {
@@ -49,4 +50,26 @@
   width: 306px;
   height: 306px;
   margin-left: 10px;
+}
+
+/* Animations */
+.my-show-hide-animation.ng-hide-add,
+.my-show-hide-animation.ng-hide-remove {
+  -webkit-transition: 5s linear all;
+  transition: 5s linear all;
+
+  /* remember to add this */
+  display:block!important;
+  opacity:1;
+  top: 0;
+}
+.my-show-hide-animation.ng-hide {
+  opacity:0;
+  top: 10px;
+}
+
+.test-animate {
+  height: 100px;
+  width: 100px;
+  background-color: green;
 }

@@ -1,6 +1,7 @@
 var instaSearch = angular.module("instagramSearcherApp", []);
 
 instaSearch.controller("InstagramSearchCtrl", function($scope, $http) {
+  $scope.showPics = false;
   $scope.search = function(keyword) {
     if (!keyword) {
       $scope.formError = true;
@@ -25,6 +26,7 @@ instaSearch.controller("InstagramSearchCtrl", function($scope, $http) {
       $scope.resultMessage = "We found " + $scope.results.length + " results for " + $scope.keyword;
       $scope.keyword = "";
       $scope.searchInProgress = false;
+      $scope.showPics= true;
     })
     .error(function() {
       alert('Error!');
