@@ -1,0 +1,52 @@
+/* Overall page syles */
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+/* Header styles */
+
+.logo {
+  background-image: url('../images/ng-instagram.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  height: 100px;
+  text-indent: -9999px;
+  margin-bottom: 30px;
+}
+
+/* Form Styles */
+
+.search-form {
+  text-align: center;
+}
+
+.form-errors {
+  padding: 10px 0;
+  color: red;
+  margin: 0 auto;
+}
+
+/* Results styles */
+
+.results-container {
+  padding-top: 30px;
+}
+
+.search-results {
+  padding-top: 40px;
+}
+
+.result-message {
+  text-align: center;
+}
+
+.photo-result {
+  float: left;
+  width: 306px;
+  height: 306px;
+  margin-left: 10px;
+}
