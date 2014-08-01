@@ -1,14 +1,12 @@
-var instaSearch = angular.module("instagramSearcherApp", []);
+var instaSearch = angular.module("instagramSearcherApp", ["ngAnimate"]);
 
 instaSearch.controller("InstagramSearchCtrl", function($scope, $http) {
   $scope.showPics = false;
   $scope.search = function(keyword) {
-    if (!keyword) {
-      $scope.formError = true;
+    if ($scope.searchForm.$invalid) {
       return false;
     }
-    $scope.searchInProgress = true;
-    $scope.keyword = keyword;
+    // $scope.keyword = keyword;
     $scope.formError = false;
     var url = "https://api.instagram.com/v1/tags/" + keyword + "/media/recent";
     var request = {
@@ -23,10 +21,11 @@ instaSearch.controller("InstagramSearchCtrl", function($scope, $http) {
     .success(function(result) {
       console.log(result);
       $scope.results = result.data;
-      $scope.resultMessage = "We found " + $scope.results.length + " results for " + $scope.keyword;
+      // I moved the result message into the view. Best practice.
+      $scope.lastKeyword = $scope.keyword;
       $scope.keyword = "";
-      $scope.searchInProgress = false;
       $scope.showPics= true;
+      $scope.searchSubmitted = false;
     })
     .error(function() {
       alert('Error!');
