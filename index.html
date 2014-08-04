@@ -7,9 +7,6 @@
 </head>
 <body ng-controller="InstagramSearchCtrl">
   <div class="container">
-    <div class="test-animation my-show-hide-animation" ng-show="showPics">
-      Testing Animation
-    </div>
     <div class="logo">
       Instagram Searcher
     </div>
@@ -27,7 +24,7 @@
         We found {{results.length}} results for {{lastKeyword}}.
       </div>
       <div class="results-container ">
-        <div class="photo-result my-show-hide-animation" ng-repeat="result in results" ng-show="showPics">
+        <div class="photo-result my-enter-animation" ng-repeat="result in results">
           <a href="{{result.link}}">
             <img ng-src="{{result.images.low_resolution.url}}" alt="result picture">
           </a>

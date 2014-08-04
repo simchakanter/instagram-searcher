@@ -53,25 +53,17 @@
 }
 
 /* Animations */
-.my-show-hide-animation.ng-hide-add,
-.my-show-hide-animation.ng-hide-remove {
-  -webkit-transition: 5s linear all;
-  transition: 5s linear all;
 
-  /* remember to add this */
-  display:block!important;
-  opacity:1;
-  top: 0;
+.my-enter-animation.ng-enter {
+  -webkit-transition: 1s linear all;
+  transition: 1s linear all;
 }
-.my-show-hide-animation.ng-hide {
+
+.my-enter-animation.ng-enter {
   opacity:0;
-  top: 10px;
 }
 
-.test-animation {
-  height: 100px;
-  width: 100px;
-  background-color: green;
-  color: white;
-  text-align: center;
+.my-enter-animation.ng-enter-active {
+  opacity:1;
 }
+
